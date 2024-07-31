@@ -1,0 +1,13 @@
+spring:
+  sql:
+    init:
+      mode: embedded
+      schema-locations: classpath:db-init/schema.sql
+  output:
+    ansi:
+      enabled: always
+logging:
+  level:
+    dev.example: debug
+    org.springframework.r2dbc.core: debug
+

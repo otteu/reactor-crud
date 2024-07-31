@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  webflux-reactor:
+    container_name: webflux-reactor
+    image: webflux-reactor:0.0.1-SNAPSHOT
+    ports: #host : container
+      - "8080:8080"
+    environment:
+      - spring.r2dbc.url=r2dbc:pool:mariadb://192.168.0.114:3306/sample
+      - api.externalUrl=http://192.168.0.114:8081
+      - logging.org.springframework.r2dbc.core=off
